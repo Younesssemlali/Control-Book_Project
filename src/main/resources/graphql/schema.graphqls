@@ -1,0 +1,23 @@
+type Query{
+    getBookByTitle(title : String) :[BookDTO]
+    getBookByPublisherAndPrice(publisher:String,price:Float): [BookDTO]
+}
+type Mutation {
+    saveBook(book :Book) : BookDTO
+    delete(id:ID) : BookDTO
+}
+
+input Book{
+    titre:String
+    publisher:String
+    date_Publication :String
+    price:Float
+    resume:String
+}
+type BookDTO {
+    titre:String
+    publisher:String
+    date_Publication :String
+    price:Float
+    resume:String
+}
